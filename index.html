@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Munetios Accounts - Coming Soon</title>
+    <link
+      rel="stylesheet"
+      href="https://api.munetios.com/beautiful-css/beautiful.css"
+    />
+    <meta
+      name="description"
+      content="Munetios Accounts - Coming Soon: Stay tuned for updates."
+    />
+    <meta name="keywords" content="Munetios, Accounts, Coming Soon, Updates" />
+    <meta name="author" content="Munetios" />
+    <link
+      rel="icon"
+      href="https://www.munetios.com/favicon-new.ico"
+      type="image/x-icon"
+    />
+    <!-- Material Symbols Rounded -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://api.munetios.com 'nonce-38Dh3hnDSiebf'; style-src 'self' https://api.munetios.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: blob: https://*.munetios.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://api.munetios.com; frame-ancestors 'none';"
+    />
+    <style>
+      * {
+        font-family: "Google Sans Flex", "Google Sans", "Segoe UI", sans-serif;
+        box-sizing: border-box;
+      }
+      body.light-mode {
+        background-color: #ffffff;
+        color: #000000 !important;
+      }
+      body.light-mode .container-l {
+        background-image: url("background-light.jpg");
+      }
+      body {
+        background-color: #0b011a;
+        color: white;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+      }
+      .app-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+      }
+      .container-l {
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 60%;
+      }
+      .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 60px);
+      }
+      .container-l-topbar {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .logo {
+        font-size: 27px;
+        font-weight: 600;
+      }
+      .container-r {
+        width: 40%;
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed;
+        bottom: 10px;
+        width: calc(100% - 40%);
+      }
+      .bottom-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 10px;
+        border-radius: 100px;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+        cursor: pointer;
+      }
+      .bottom-left:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(2px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+      .bottom-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        border-radius: 100px;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+        cursor: pointer;
+      }
+      .bottom-right:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(2px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+      icon {
+        font-size: 28px;
+        font-family: "Material Symbols Rounded";
+      }
+      .container-r-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: calc(100% - 60%);
+        gap: 10px;
+      }
+      .container-r-footer a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container-r-topbar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+      }
+      .container-r-content {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container-r-content a {
+        color: inherit;
+        text-decoration: none;
+      }
+      @media (max-width: 1075px) {
+        .container-r {
+          width: 60%;
+        }
+        .container-l {
+          width: 40%;
+        }
+        .bottom {
+          width: calc(100% - 60%);
+        }
+        .center-container {
+          margin-left: 20px;
+        }
+      }
+      @media (max-width: 800px) {
+        .container-l {
+          visibility: hidden;
+          width: 0;
+        }
+        .container-r {
+          width: 100%;
+        }
+        .bottom {
+          width: calc(100% - 0%);
+          display: flex !important;
+          visibility: visible !important;
+        }
+        .center-container {
+          margin-left: 0;
+        }
+        .container-r-footer {
+          width: 100%;
+          bottom: 50px;
+        }
+        body {
+          background-image: url("background.jpg");
+          background-position: center;
+          background-attachment: fixed;
+        }
+        body.light-mode {
+          background-image: url("background-light.jpg");
+          background-position: center;
+          background-attachment: fixed;
+        }
+      }
+      @media (max-width: 520px) {
+        .container-r-topbar {
+          padding: 10px;
+          gap: 10px;
+          align-items: center;
+        }
+        .container-r {
+          width: 100%;
+        }
+        .container-r-topbar h1 {
+          font-size: 22px;
+        }
+        .logo-img img {
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+        }
+        .container-r-content {
+          padding: 15px;
+        }
+        .container-r-content h2 {
+          font-size: 29px;
+          margin: 10px 0;
+        }
+        .container-r-content p {
+          font-size: 18px;
+          margin: 10px 0;
+        }
+        .container-r-content h3 {
+          font-size: 18px;
+          margin: 10px 0;
+        }
+        .container-r-content ul {
+          font-size: 18px;
+          padding-left: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .container-r-content {
+          padding: 20px;
+        }
+        .container-r-content h2 {
+          font-size: 24px;
+        }
+        .container-r-topbar {
+          gap: 15px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .container-r-content {
+          padding: 20px;
+          max-width: 100%;
+        }
+      }
+      .btn {
+        padding: 12px 24px;
+        border-radius: 58px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      }
+      .btn:hover {
+        background: linear-gradient(135deg, #818df848 0%, #a78bfa17 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+      }
+      .btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+      }
+      .disclaimer-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+      .disclaimer-modal.active {
+        display: flex;
+      }
+      .modal-content {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 500px;
+        width: 90%;
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        animation: slideIn 0.3s ease-out;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .modal-content h2 {
+        margin: 0 0 20px 0;
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+      }
+      .modal-content h3 {
+        margin: 20px 0 10px 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: #e2e8f0;
+      }
+      .modal-content p {
+        margin: 10px 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #cbd5e1;
+      }
+      .modal-content .btn {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 520px) {
+        .modal-content {
+          padding: 30px 20px;
+          border-radius: 12px;
+        }
+        .modal-content h2 {
+          font-size: 24px;
+        }
+        .modal-content h3 {
+          font-size: 16px;
+        }
+        .modal-content p {
+          font-size: 14px;
+        }
+      }
+      .language-wrapper {
+        position: relative;
+      }
+      .language-dropdown {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 0;
+        border-radius: 16px;
+        padding: 8px;
+        min-width: 210px;
+        max-height: 340px;
+        overflow-y: auto;
+        display: none;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 200;
+        scrollbar-width: thin;
+      }
+      .language-dropdown.open {
+        display: flex;
+        animation: slideIn 0.2s ease-out;
+      }
+      .lang-option {
+        padding: 9px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.15s;
+        white-space: nowrap;
+      }
+      .lang-option:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+      .lang-option.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="container-l">
+        <div class="container-l-topbar">
+          <div class="logo">Munetios</div>
+        </div>
+        <div class="center-container">
+          <h1 data-i18n="leftTitle">Munetios Accounts — Coming Soon</h1>
+        </div>
+        <div class="bottom">
+          <div class="bottom-left liquid-glass" id="languageBtn">
+            <icon>language</icon>
+            <div class="language-label" id="languageLabel">English</div>
+            <icon>arrow_drop_down</icon>
+          </div>
+
+          <div class="bottom-right liquid-glass" id="lightModeToggleBtn">
+            <icon>light_mode</icon>
+          </div>
+        </div>
+      </div>
+      <div class="container-r">
+        <div class="container-r-topbar">
+          <div class="logo-img">
+            <img
+              src="https://www.munetios.com/munetios-logo-icon.png"
+              alt="Munetios Logo"
+              width="60"
+              height="60"
+            />
+          </div>
+          <h1 data-i18n="signIn">Sign In</h1>
+        </div>
+        <div class="container-r-content">
+          <h2 data-i18n="comingSoon">Munetios Accounts is Coming Soon</h2>
+          <p data-i18n="comingSoonDesc">
+            We're working hard to bring you a new and improved experience. Stay
+            tuned!
+          </p>
+          <h3 data-i18n="upcomingFeatures">Upcoming Features</h3>
+          <ul>
+            <li>
+              <span data-i18n="googleSignIn"
+                >Sign in with Google (Limited)</span
+              >
+              <a id="learnModeBtn" data-i18n="learnMore">Learn More</a>
+            </li>
+            <li data-i18n="signUp">
+              Sign Up with optional last name and gender
+            </li>
+            <li data-i18n="secureAccount">Secure account management</li>
+            <li data-i18n="syncDevices">Sync across devices</li>
+            <li data-i18n="andMore">And more</li>
+          </ul>
+          <p>
+            <span data-i18n="notifyText"
+              >Want to be notified when we launch? Follow us on</span
+            >
+            <a href="https://x.com/munetios">X</a>.
+          </p>
+        </div>
+        <div class="container-r-footer">
+          <a href="https://www.munetios.com/policies/#/terms" data-i18n="terms"
+            >Terms</a
+          >
+          |
+          <a
+            href="https://www.munetios.com/policies/#/privacy"
+            data-i18n="privacy"
+            >Privacy</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="language-wrapper" id="languageWrapper">
+      <div class="language-dropdown liquid-glass" id="languageDropdown">
+        <div class="lang-option" data-lang="en">🇺🇸 English</div>
+        <div class="lang-option" data-lang="es">🇪🇸 Español</div>
+        <div class="lang-option" data-lang="fr">🇫🇷 Français</div>
+        <div class="lang-option" data-lang="de">🇩🇪 Deutsch</div>
+        <div class="lang-option" data-lang="it">🇮🇹 Italiano</div>
+        <div class="lang-option" data-lang="pt">🇧🇷 Português</div>
+        <div class="lang-option" data-lang="ja">🇯🇵 日本語</div>
+        <div class="lang-option" data-lang="ko">🇰🇷 한국어</div>
+        <div class="lang-option" data-lang="zh">🇨🇳 中文 (简体)</div>
+        <div class="lang-option" data-lang="zh-tw">🇹🇼 繁體中文</div>
+        <div class="lang-option" data-lang="ar">🇸🇦 العربية</div>
+        <div class="lang-option" data-lang="hi">🇮🇳 हिन्दी</div>
+        <div class="lang-option" data-lang="ru">🇷🇺 Русский</div>
+        <div class="lang-option" data-lang="nl">🇳🇱 Nederlands</div>
+        <div class="lang-option" data-lang="pl">🇵🇱 Polski</div>
+        <div class="lang-option" data-lang="tr">🇹🇷 Türkçe</div>
+        <div class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</div>
+        <div class="lang-option" data-lang="vi">🇻🇳 Tiếng Việt</div>
+      </div>
+    </div>
+    <div class="disclaimer-modal" id="disclaimerModal">
+      <div class="modal-content liquid-glass">
+        <h2 data-i18n="disclaimerTitle">Notice</h2>
+        <h3 data-i18n="disclaimerSubtitle">
+          About Limited Google Sign-In Support
+        </h3>
+        <p data-i18n="disclaimerP1">
+          Munetios is a privacy-first platform. To protect your data, we
+          intentionally avoid one-tap sign-in and embedded Google sign-in
+          methods.
+        </p>
+        <p data-i18n="disclaimerP2">
+          When you choose Sign in with Google, you will be redirected to
+          accounts.google.com. Please be aware that Google may collect telemetry
+          data during this process, as governed by their own privacy policy.
+        </p>
+        <button
+          class="btn liquid-glass"
+          id="closeDisclaimerBtn"
+          data-i18n="close"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <script nonce="38Dh3hnDSiebf">
+      // ── Translations ────────────────────────────────────────────────────────
+      const translations = {
+        en: {
+          signIn: "Sign In",
+          comingSoon: "Munetios Accounts is Coming Soon",
+          comingSoonDesc:
+            "We're working hard to bring you a new and improved experience. Stay tuned!",
+          upcomingFeatures: "Upcoming Features",
+          googleSignIn: "Sign in with Google (Limited)",
+          learnMore: "Learn More",
+          signUp: "Sign Up with optional last name and gender",
+          secureAccount: "Secure account management",
+          syncDevices: "Sync across devices",
+          andMore: "And more",
+          notifyText: "Want to be notified when we launch? Follow us on",
+          terms: "Terms",
+          privacy: "Privacy",
+          disclaimerTitle: "Notice",
+          disclaimerSubtitle: "About Limited Google Sign-In Support",
+          disclaimerP1:
+            "Munetios is a privacy-first platform. To protect your data, we intentionally avoid one-tap sign-in and embedded Google sign-in methods.",
+          disclaimerP2:
+            "When you choose Sign in with Google, you will be redirected to accounts.google.com. Please be aware that Google may collect telemetry data during this process, as governed by their own privacy policy.",
+          close: "Close",
+          leftTitle: "Munetios Accounts \u2014 Coming Soon",
+          langLabel: "English",
+        },
+        es: {
+          signIn: "Iniciar sesi\u00f3n",
+          comingSoon: "Munetios Accounts \u2014 Pr\u00f3ximamente",
+          comingSoonDesc:
+            "Estamos trabajando para ofrecerte una experiencia nueva y mejorada. \u00a1Mantente al tanto!",
+          upcomingFeatures: "Pr\u00f3ximas funciones",
+          googleSignIn: "Iniciar sesi\u00f3n con Google (Limitado)",
+          learnMore: "M\u00e1s informaci\u00f3n",
+          signUp: "Registrarse con apellido y g\u00e9nero opcionales",
+          secureAccount: "Gesti\u00f3n segura de cuenta",
+          syncDevices: "Sincronizaci\u00f3n entre dispositivos",
+          andMore: "Y m\u00e1s",
+          notifyText:
+            "\u00bfQuieres recibir notificaciones al lanzar? S\u00edguenos en",
+          terms: "T\u00e9rminos",
+          privacy: "Privacidad",
+          disclaimerTitle: "Aviso",
+          disclaimerSubtitle:
+            "Sobre el soporte limitado de inicio de sesi\u00f3n con Google",
+          disclaimerP1:
+            "Munetios es una plataforma que prioriza la privacidad. Para proteger tus datos, evitamos intencionadamente el inicio de sesi\u00f3n con un solo toque y los m\u00e9todos de inicio de sesi\u00f3n integrados de Google.",
+          disclaimerP2:
+            "Al elegir Iniciar sesi\u00f3n con Google, ser\u00e1s redirigido a accounts.google.com. Ten en cuenta que Google puede recopilar datos de telemetr\u00eda durante este proceso seg\u00fan su propia pol\u00edtica de privacidad.",
+          close: "Cerrar",
+          leftTitle: "Munetios Accounts \u2014 Pr\u00f3ximamente",
+          langLabel: "Espa\u00f1ol",
+        },
+        fr: {
+          signIn: "Se connecter",
+          comingSoon: "Munetios Accounts \u2014 Bient\u00f4t disponible",
+          comingSoonDesc:
+            "Nous travaillons dur pour vous offrir une exp\u00e9rience nouvelle et am\u00e9lior\u00e9e. Restez \u00e0 l\u2019\u00e9coute\u00a0!",
+          upcomingFeatures: "Fonctionnalit\u00e9s \u00e0 venir",
+          googleSignIn: "Se connecter avec Google (Limit\u00e9)",
+          learnMore: "En savoir plus",
+          signUp: "S\u2019inscrire avec nom de famille et genre optionnels",
+          secureAccount: "Gestion s\u00e9curis\u00e9e du compte",
+          syncDevices: "Synchronisation sur tous les appareils",
+          andMore: "Et plus encore",
+          notifyText:
+            "Vous souhaitez \u00eatre notifi\u00e9 lors de notre lancement\u00a0? Suivez-nous sur",
+          terms: "Conditions",
+          privacy: "Confidentialit\u00e9",
+          disclaimerTitle: "Avis",
+          disclaimerSubtitle:
+            "\u00c0 propos du support limit\u00e9 de connexion Google",
+          disclaimerP1:
+            "Munetios est une plateforme ax\u00e9e sur la confidentialit\u00e9. Pour prot\u00e9ger vos donn\u00e9es, nous \u00e9vitons intentionnellement la connexion en un clic et les m\u00e9thodes de connexion Google int\u00e9gr\u00e9es.",
+          disclaimerP2:
+            "Lorsque vous choisissez Se connecter avec Google, vous serez redirig\u00e9 vers accounts.google.com. Veuillez noter que Google peut collecter des donn\u00e9es de t\u00e9l\u00e9m\u00e9trie conform\u00e9ment \u00e0 sa propre politique de confidentialit\u00e9.",
+          close: "Fermer",
+          leftTitle: "Munetios Accounts \u2014 Bient\u00f4t disponible",
+          langLabel: "Fran\u00e7ais",
+        },
+        de: {
+          signIn: "Anmelden",
+          comingSoon: "Munetios Accounts \u2014 Demn\u00e4chst verf\u00fcgbar",
+          comingSoonDesc:
+            "Wir arbeiten hart daran, Ihnen ein neues und verbessertes Erlebnis zu bieten. Bleiben Sie dran!",
+          upcomingFeatures: "Kommende Funktionen",
+          googleSignIn: "Mit Google anmelden (Eingeschr\u00e4nkt)",
+          learnMore: "Mehr erfahren",
+          signUp: "Registrieren mit optionalem Nachnamen und Geschlecht",
+          secureAccount: "Sichere Kontoverwaltung",
+          syncDevices: "Ger\u00e4te\u00fcbergreifende Synchronisierung",
+          andMore: "Und mehr",
+          notifyText:
+            "M\u00f6chten Sie beim Start benachrichtigt werden? Folgen Sie uns auf",
+          terms: "Nutzungsbedingungen",
+          privacy: "Datenschutz",
+          disclaimerTitle: "Hinweis",
+          disclaimerSubtitle: "Zum eingeschr\u00e4nkten Google-Anmeldesupport",
+          disclaimerP1:
+            "Munetios ist eine datenschutzorientierte Plattform. Um Ihre Daten zu sch\u00fctzen, vermeiden wir bewusst die Ein-Tap-Anmeldung und eingebettete Google-Anmeldemethoden.",
+          disclaimerP2:
+            "Wenn Sie \u201eMit Google anmelden\u201c w\u00e4hlen, werden Sie zu accounts.google.com weitergeleitet. Bitte beachten Sie, dass Google gem\u00e4\u00df seiner eigenen Datenschutzrichtlinie Telemetriedaten erheben kann.",
+          close: "Schlie\u00dfen",
+          leftTitle: "Munetios Accounts \u2014 Demn\u00e4chst verf\u00fcgbar",
+          langLabel: "Deutsch",
+        },
+        it: {
+          signIn: "Accedi",
+          comingSoon: "Munetios Accounts \u2014 Prossimamente",
+          comingSoonDesc:
+            "Stiamo lavorando sodo per offrirti un\u2019esperienza nuova e migliorata. Resta sintonizzato!",
+          upcomingFeatures: "Funzionalit\u00e0 in arrivo",
+          googleSignIn: "Accedi con Google (Limitato)",
+          learnMore: "Scopri di pi\u00f9",
+          signUp: "Registrati con cognome e genere opzionali",
+          secureAccount: "Gestione sicura dell\u2019account",
+          syncDevices: "Sincronizzazione tra dispositivi",
+          andMore: "E altro ancora",
+          notifyText: "Vuoi essere avvisato al lancio? Seguici su",
+          terms: "Termini",
+          privacy: "Privacy",
+          disclaimerTitle: "Avviso",
+          disclaimerSubtitle:
+            "Informazioni sul supporto limitato all\u2019accesso con Google",
+          disclaimerP1:
+            "Munetios \u00e8 una piattaforma orientata alla privacy. Per proteggere i tuoi dati, evitiamo intenzionalmente il login con un tocco e i metodi di accesso Google incorporati.",
+          disclaimerP2:
+            "Scegliendo Accedi con Google, verrai reindirizzato a accounts.google.com. Tieni presente che Google potrebbe raccogliere dati di telemetria in base alla propria informativa sulla privacy.",
+          close: "Chiudi",
+          leftTitle: "Munetios Accounts \u2014 Prossimamente",
+          langLabel: "Italiano",
+        },
+        pt: {
+          signIn: "Entrar",
+          comingSoon: "Munetios Accounts \u2014 Em breve",
+          comingSoonDesc:
+            "Estamos trabalhando muito para oferecer uma experi\u00eancia nova e melhorada. Fique atento!",
+          upcomingFeatures: "Funcionalidades futuras",
+          googleSignIn: "Entrar com Google (Limitado)",
+          learnMore: "Saiba mais",
+          signUp: "Cadastrar com sobrenome e g\u00eanero opcionais",
+          secureAccount: "Gerenciamento seguro de conta",
+          syncDevices: "Sincroniza\u00e7\u00e3o entre dispositivos",
+          andMore: "E mais",
+          notifyText: "Quer ser notificado ao lan\u00e7armos? Siga-nos no",
+          terms: "Termos",
+          privacy: "Privacidade",
+          disclaimerTitle: "Aviso",
+          disclaimerSubtitle: "Sobre o suporte limitado ao login com Google",
+          disclaimerP1:
+            "A Munetios \u00e9 uma plataforma que prioriza a privacidade. Para proteger seus dados, evitamos intencionalmente o login com um toque e os m\u00e9todos de login incorporados do Google.",
+          disclaimerP2:
+            "Ao escolher Entrar com Google, voc\u00ea ser\u00e1 redirecionado para accounts.google.com. Esteja ciente de que o Google pode coletar dados de telemetria conforme sua pr\u00f3pria pol\u00edtica de privacidade.",
+          close: "Fechar",
+          leftTitle: "Munetios Accounts \u2014 Em breve",
+          langLabel: "Portugu\u00eas",
+        },
+        ja: {
+          signIn: "\u30b5\u30a4\u30f3\u30a4\u30f3",
+          comingSoon: "Munetios Accounts \u2014 \u8fd1\u65e5\u516c\u958b",
+          comingSoonDesc:
+            "\u65b0\u3057\u304f\u6539\u5584\u3055\u308c\u305f\u4f53\u9a13\u3092\u304a\u5c4a\u3051\u3059\u308b\u305f\u3081\u9089\u4e8b\u958b\u767a\u4e2d\u3067\u3059\u3002\u304a\u697d\u3057\u307f\u306b\uff01",
+          upcomingFeatures: "\u4e88\u5b9a\u6a5f\u80fd",
+          googleSignIn:
+            "Google\u3067\u30b5\u30a4\u30f3\u30a4\u30f3\uff08\u5236\u9650\u3042\u308a\uff09",
+          learnMore: "\u8a73\u7d30\u3092\u898b\u308b",
+          signUp:
+            "\u767b\u9332\uff08\u59d3\u3068\u6027\u5225\u306f\u30aa\u30d7\u30b7\u30e7\u30f3\uff09",
+          secureAccount:
+            "\u5b89\u5168\u306a\u30a2\u30ab\u30a6\u30f3\u30c8\u7ba1\u7406",
+          syncDevices: "\u30c7\u30d0\u30a4\u30b9\u9593\u306e\u540c\u671f",
+          andMore: "\u305d\u306e\u4ed6",
+          notifyText:
+            "\u30ea\u30ea\u30fc\u30b9\u901a\u77e5\u3092\u53d7\u3051\u53d6\u308a\u305f\u3044\u65b9\u306f\u30d5\u30a9\u30ed\u30fc\u3057\u3066\u304f\u3060\u3055\u3044\uff1a",
+          terms: "\u5229\u7528\u898f\u7d04",
+          privacy: "\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc",
+          disclaimerTitle: "\u304a\u77e5\u3089\u305b",
+          disclaimerSubtitle:
+            "Google\u30b5\u30a4\u30f3\u30a4\u30f3\u304c\u5236\u9650\u3055\u308c\u308b\u7406\u7531",
+          disclaimerP1:
+            "Munetios\u306f\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u3092\u6700\u512a\u5148\u3059\u308b\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3067\u3059\u3002\u304a\u5ba2\u69d8\u306e\u30c7\u30fc\u30bf\u3092\u4fdd\u8b77\u3059\u308b\u305f\u3081\u3001\u30ef\u30f3\u30bf\u30c3\u30d7\u30b5\u30a4\u30f3\u30a4\u30f3\u3084\u57cb\u3081\u8fbc\u307f\u578bGoogle\u30b5\u30a4\u30f3\u30a4\u30f3\u65b9\u5f0f\u3092\u610f\u56f3\u7684\u306b\u63a1\u7528\u3057\u3066\u3044\u307e\u305b\u3093\u3002",
+          disclaimerP2:
+            "\u300cGoogle\u3067\u30b5\u30a4\u30f3\u30a4\u30f3\u300d\u3092\u9078\u3076\u3068accounts.google.com\u306b\u30ea\u30c0\u30a4\u30ec\u30af\u30c8\u3055\u308c\u307e\u3059\u3002\u3053\u306e\u30d7\u30ed\u30bb\u30b9\u4e2d\u306bGoogle\u304c\u81ea\u793e\u306e\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u30dd\u30ea\u30b7\u30fc\u306b\u5f93\u3044\u30c6\u30ec\u30e1\u30c8\u30ea\u30c7\u30fc\u30bf\u3092\u53ce\u96c6\u3059\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002",
+          close: "\u9589\u3058\u308b",
+          leftTitle: "Munetios Accounts \u2014 \u8fd1\u65e5\u516c\u958b",
+          langLabel: "\u65e5\u672c\u8a9e",
+        },
+        ko: {
+          signIn: "\ub85c\uadf8\uc778",
+          comingSoon: "Munetios Accounts \u2014 \ucd9c\uc2dc \uc608\uc815",
+          comingSoonDesc:
+            "\uc0c8\ub86d\uace0 \uac1c\uc120\ub41c \uacbd\ud5d8\uc744 \uc81c\uacf5\ud558\uae30 \uc704\ud574 \uc5f4\uc2ec\ud788 \uc791\uc5c5 \uc911\uc785\ub2c8\ub2e4. \uae30\ub300\ud574 \uc8fc\uc138\uc694!",
+          upcomingFeatures: "\uc608\uc815 \uae30\ub2a5",
+          googleSignIn: "Google\ub85c \ub85c\uadf8\uc778 (\uc81c\ud55c\uc801)",
+          learnMore: "\uc790\uc138\ud788 \uc54c\uc544\ubcf4\uae30",
+          signUp:
+            "\uc131 \ubc0f \uc131\ubcc4 \uc120\ud0dd \ud3ec\ud568 \ud68c\uc6d0\uac00\uc785",
+          secureAccount: "\uc548\uc804\ud55c \uacc4\uc815 \uad00\ub9ac",
+          syncDevices: "\uae30\uae30 \uac04 \ub3d9\uae30\ud654",
+          andMore: "\uadf8 \uc678 \ub354 \ub9ce\uc740 \uae30\ub2a5",
+          notifyText:
+            "\ucd9c\uc2dc \uc54c\ub9bc\uc744 \ubc1b\uace0 \uc2f6\uc73c\uc2e0\uac00\uc694? \ud314\ub85c\uc6b0\ud558\uc138\uc694:",
+          terms: "\uc774\uc6a9\uc57d\uad00",
+          privacy: "\uac1c\uc778\uc815\ubcf4 \ucc98\ub9ac\ubc29\uce68",
+          disclaimerTitle: "\uc548\ub0b4",
+          disclaimerSubtitle:
+            "Google \ub85c\uadf8\uc778\uc774 \uc81c\ud55c\ub418\ub294 \uc774\uc720",
+          disclaimerP1:
+            "Munetios\ub294 \uac1c\uc778\uc815\ubcf4 \ubcf4\ud638\ub97c \ucd5c\uc6b0\uc120\uc73c\ub85c \ud558\ub294 \ud50c\ub7ab\ud3fc\uc785\ub2c8\ub2e4. \uadc0\ud558\uc758 \ub370\uc774\ud130\ub97c \ubcf4\ud638\ud558\uae30 \uc704\ud574 \uc6d0\ud0ed \ub85c\uadf8\uc778 \ubc0f \ub0b4\uc7a5\ud615 Google \ub85c\uadf8\uc778 \ubc29\uc2dd\uc744 \uc758\ub3c4\uc801\uc73c\ub85c \uc0ac\uc6a9\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.",
+          disclaimerP2:
+            "Google\ub85c \ub85c\uadf8\uc778\uc744 \uc120\ud0dd\ud558\uba74 accounts.google.com\uc73c\ub85c \ub9ac\ub514\ub809\uc158\ub429\ub2c8\ub2e4. \uc774 \uacfc\uc815\uc5d0\uc11c Google\uc774 \uc790\uccb4 \uac1c\uc778\uc815\ubcf4 \ucc98\ub9ac\ubc29\uce68\uc5d0 \ub530\ub77c \uc6d0\uaca9 \uce21\uc815 \ub370\uc774\ud130\ub97c \uc218\uc9d1\ud560 \uc218 \uc788\uc74c\uc744 \ucc38\uace0\ud558\uc2dc\uae30 \ubc14\ub78d\ub2c8\ub2e4.",
+          close: "\ub2eb\uae30",
+          leftTitle: "Munetios Accounts \u2014 \ucd9c\uc2dc \uc608\uc815",
+          langLabel: "\ud55c\uad6d\uc5b4",
+        },
+        zh: {
+          signIn: "\u767b\u5f55",
+          comingSoon: "Munetios Accounts \u2014 \u5373\u5c06\u4e0a\u7ebf",
+          comingSoonDesc:
+            "\u6211\u4eec\u6b63\u5728\u52aa\u529b\u4e3a\u60a8\u5e26\u6765\u5168\u65b0\u5347\u7ea7\u7684\u4f53\u9a8c\uff0c\u656c\u8bf7\u671f\u5f85\uff01",
+          upcomingFeatures: "\u5373\u5c06\u63a8\u51fa\u7684\u529f\u80fd",
+          googleSignIn:
+            "\u4f7f\u7528 Google \u767b\u5f55\uff08\u53d7\u9650\uff09",
+          learnMore: "\u4e86\u89e3\u66f4\u591a",
+          signUp:
+            "\u6ce8\u518c\uff08\u59d3\u6c0f\u548c\u6027\u522b\u53ef\u9009\uff09",
+          secureAccount: "\u5b89\u5168\u7684\u8d26\u6237\u7ba1\u7406",
+          syncDevices: "\u8de8\u8bbe\u5907\u540c\u6b65",
+          andMore: "\u66f4\u591a\u529f\u80fd",
+          notifyText:
+            "\u60f3\u5728\u6211\u4eec\u4e0a\u7ebf\u65f6\u6536\u5230\u901a\u77e5\uff1f\u5173\u6ce8\u6211\u4eec\uff1a",
+          terms: "\u670d\u52a1\u6761\u6b3e",
+          privacy: "\u9690\u79c1\u653f\u7b56",
+          disclaimerTitle: "\u6ce8\u610f\u4e8b\u9879",
+          disclaimerSubtitle:
+            "\u5173\u4e8e Google \u767b\u5f55\u53d7\u9650\u8bf4\u660e",
+          disclaimerP1:
+            "Munetios \u662f\u4e00\u4e2a\u4ee5\u9690\u79c1\u4e3a\u5148\u7684\u5e73\u53f0\u3002\u4e3a\u4fdd\u62a4\u60a8\u7684\u6570\u636e\uff0c\u6211\u4eec\u6709\u610f\u907f\u514d\u4f7f\u7528\u4e00\u952e\u767b\u5f55\u548c\u5d4c\u5165\u5f0f Google \u767b\u5f55\u65b9\u5f0f\u3002",
+          disclaimerP2:
+            "\u5f53\u60a8\u9009\u62e9\u4f7f\u7528 Google \u767b\u5f55\u65f6\uff0c\u60a8\u5c06\u88ab\u91cd\u5b9a\u5411\u81f3 accounts.google.com\u3002\u8bf7\u6ce8\u610f\uff0cGoogle \u53ef\u80fd\u5728\u6b64\u8fc7\u7a0b\u4e2d\u6839\u636e\u5176\u81ea\u8eab\u9690\u79c1\u653f\u7b56\u6536\u96c6\u9065\u6d4b\u6570\u636e\u3002",
+          close: "\u5173\u95ed",
+          leftTitle: "Munetios Accounts \u2014 \u5373\u5c06\u4e0a\u7ebf",
+          langLabel: "\u4e2d\u6587 (\u7b80\u4f53)",
+        },
+        "zh-tw": {
+          signIn: "\u767b\u5165",
+          comingSoon: "Munetios Accounts \u2014 \u5373\u5c07\u63a8\u51fa",
+          comingSoonDesc:
+            "\u6211\u5011\u6b63\u52aa\u529b\u70ba\u60a8\u5e36\u4f86\u5168\u65b0\u5347\u7d1a\u7684\u9ad4\u9a57\uff0c\u656c\u8acb\u671f\u5f85\uff01",
+          upcomingFeatures: "\u5373\u5c07\u63a8\u51fa\u7684\u529f\u80fd",
+          googleSignIn:
+            "\u4f7f\u7528 Google \u767b\u5165\uff08\u53d7\u9650\uff09",
+          learnMore: "\u77ad\u89e3\u66f4\u591a",
+          signUp:
+            "\u8a3b\u518a\uff08\u59d3\u6c0f\u548c\u6027\u5225\u53ef\u9078\uff09",
+          secureAccount: "\u5b89\u5168\u7684\u5e33\u865f\u7ba1\u7406",
+          syncDevices: "\u8de8\u88dd\u7f6e\u540c\u6b65",
+          andMore: "\u66f4\u591a\u529f\u80fd",
+          notifyText:
+            "\u60f3\u5728\u6211\u5011\u4e0a\u7dda\u6642\u6536\u5230\u901a\u77e5\uff1f\u8ffd\u8e64\u6211\u5011\uff1a",
+          terms: "\u670d\u52d9\u689d\u6b3e",
+          privacy: "\u96b1\u79c1\u653f\u7b56",
+          disclaimerTitle: "\u6ce8\u610f\u4e8b\u9805",
+          disclaimerSubtitle:
+            "\u95dc\u65bc Google \u767b\u5165\u53d7\u9650\u8aaa\u660e",
+          disclaimerP1:
+            "Munetios \u662f\u4e00\u500b\u4ee5\u96b1\u79c1\u70ba\u512a\u5148\u7684\u5e73\u53f0\u3002\u70ba\u4fdd\u8b77\u60a8\u7684\u8cc7\u6599\uff0c\u6211\u5011\u6709\u610f\u907f\u514d\u4f7f\u7528\u4e00\u9375\u767b\u5165\u548c\u5d4c\u5165\u5f0f Google \u767b\u5165\u65b9\u5f0f\u3002",
+          disclaimerP2:
+            "\u7576\u60a8\u9078\u64c7\u4f7f\u7528 Google \u767b\u5165\u6642\uff0c\u60a8\u5c07\u88ab\u91cd\u65b0\u5c0e\u5411\u81f3 accounts.google.com\u3002\u8acb\u6ce8\u610f\uff0cGoogle \u53ef\u80fd\u5728\u6b64\u904e\u7a0b\u4e2d\u4f9d\u64da\u5176\u96b1\u79c1\u653f\u7b56\u6536\u96c6\u9060\u6e2c\u8cc7\u6599\u3002",
+          close: "\u95dc\u9589",
+          leftTitle: "Munetios Accounts \u2014 \u5373\u5c07\u63a8\u51fa",
+          langLabel: "\u7e41\u9ad4\u4e2d\u6587",
+        },
+        ar: {
+          signIn:
+            "\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",
+          comingSoon:
+            "Munetios Accounts \u2014 \u0642\u0631\u064a\u0628\u0627\u064b",
+          comingSoonDesc:
+            "\u0646\u0639\u0645\u0644 \u0628\u062c\u062f\u0651 \u0644\u062a\u0642\u062f\u064a\u0645 \u062a\u062c\u0631\u0628\u0629 \u062c\u062f\u064a\u062f\u0629 \u0648\u0645\u062d\u0633\u0651\u0646\u0629. \u062a\u0631\u0642\u0651\u0628\u0648\u0627!",
+          upcomingFeatures:
+            "\u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u0642\u0627\u062f\u0645\u0629",
+          googleSignIn:
+            "\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0640 Google (\u0645\u062d\u062f\u0648\u062f)",
+          learnMore:
+            "\u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0645\u0632\u064a\u062f",
+          signUp:
+            "\u0625\u0646\u0634\u0627\u0621 \u062d\u0633\u0627\u0628 \u0645\u0639 \u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0648\u0627\u0644\u062c\u0646\u0633 \u0627\u062e\u062a\u064a\u0627\u0631\u064a\u064b\u0627",
+          secureAccount:
+            "\u0625\u062f\u0627\u0631\u0629 \u062d\u0633\u0627\u0628 \u0622\u0645\u0646\u0629",
+          syncDevices:
+            "\u0627\u0644\u0645\u0632\u0627\u0645\u0646\u0629 \u0639\u0628\u0631 \u0627\u0644\u0623\u062c\u0647\u0632\u0629",
+          andMore: "\u0648\u0627\u0644\u0645\u0632\u064a\u062f",
+          notifyText:
+            "\u0647\u0644 \u062a\u0631\u064a\u062f \u0623\u0646 \u062a\u064f\u062e\u0637\u0631 \u0639\u0646\u062f \u0627\u0644\u0625\u0637\u0644\u0627\u0642\u061f \u062a\u0627\u0628\u0639\u0646\u0627 \u0639\u0644\u0649",
+          terms: "\u0627\u0644\u0634\u0631\u0648\u0637",
+          privacy: "\u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629",
+          disclaimerTitle: "\u0625\u0634\u0639\u0627\u0631",
+          disclaimerSubtitle:
+            "\u062d\u0648\u0644 \u0627\u0644\u062f\u0639\u0645 \u0627\u0644\u0645\u062d\u062f\u0648\u062f \u0644\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0640 Google",
+          disclaimerP1:
+            "Munetios \u0645\u0646\u0635\u0651\u0629 \u062a\u064f\u0642\u062f\u0651\u0645 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0639\u0644\u0649 \u0643\u0644 \u0634\u064a\u0621. \u0644\u062d\u0645\u0627\u064a\u0629 \u0628\u064a\u0627\u0646\u0627\u062a\u0643\u060c \u0646\u062a\u062c\u0646\u0651\u0628 \u0639\u0645\u062f\u064b\u0627 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0646\u0642\u0631\u0629 \u0648\u0627\u062d\u062f\u0629 \u0648\u0637\u0631\u0642 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0644\u0645\u062f\u0645\u062c\u0629 \u0645\u0646 Google.",
+          disclaimerP2:
+            "\u0639\u0646\u062f \u0627\u062e\u062a\u064a\u0627\u0631 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0640 Google\u060c \u0633\u062a\u064f\u062d\u0648\u0651\u0644 \u0625\u0644\u0649 accounts.google.com. \u064a\u064f\u0631\u062c\u0649 \u0627\u0644\u0639\u0644\u0645 \u0628\u0623\u0646 Google \u0642\u062f \u064a\u062c\u0645\u0639 \u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062a\u0628\u0639 \u062e\u0644\u0627\u0644 \u0647\u0630\u0647 \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0648\u0641\u0642 \u0633\u064a\u0627\u0633\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u062e\u0627\u0635\u0629 \u0628\u0647.",
+          close: "\u0625\u063a\u0644\u0627\u0642",
+          leftTitle:
+            "Munetios Accounts \u2014 \u0642\u0631\u064a\u0628\u0627\u064b",
+          langLabel: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        },
+        hi: {
+          signIn:
+            "\u0938\u093e\u0907\u0928 \u0907\u0928 \u0915\u0930\u0947\u0902",
+          comingSoon:
+            "Munetios Accounts \u2014 \u091c\u0932\u094d\u0926 \u0906 \u0930\u0939\u093e \u0939\u0948",
+          comingSoonDesc:
+            "\u0939\u092e \u0906\u092a\u0915\u0947 \u0932\u093f\u090f \u090f\u0915 \u0928\u092f\u093e \u0914\u0930 \u092c\u0947\u0939\u0924\u0930 \u0905\u0928\u0941\u092d\u0935 \u0932\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u0921\u093c\u0940 \u092e\u0947\u0939\u0928\u0924 \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964 \u092c\u0928\u0947 \u0930\u0939\u0947\u0902!",
+          upcomingFeatures:
+            "\u0906\u0917\u093e\u092e\u0940 \u0938\u0941\u0935\u093f\u0927\u093e\u090f\u0901",
+          googleSignIn:
+            "Google \u0938\u0947 \u0938\u093e\u0907\u0928 \u0907\u0928 \u0915\u0930\u0947\u0902 (\u0938\u0940\u092e\u093f\u0924)",
+          learnMore: "\u0914\u0930 \u091c\u093e\u0928\u0947\u0902",
+          signUp:
+            "\u0938\u093e\u0907\u0928 \u0905\u092a \u0915\u0930\u0947\u0902 (\u0935\u0948\u0915\u0932\u094d\u092a\u093f\u0915 \u0905\u0902\u0924\u093f\u092e \u0928\u093e\u092e \u0914\u0930 \u0932\u093f\u0902\u0917 \u0915\u0947 \u0938\u093e\u0925)",
+          secureAccount:
+            "\u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0916\u093e\u0924\u093e \u092a\u094d\u0930\u092c\u0902\u0927\u0928",
+          syncDevices:
+            "\u0921\u093f\u0935\u093e\u0907\u0938 \u0915\u0947 \u092a\u093e\u0930 \u0938\u092e\u0928\u094d\u0935\u092f\u0928",
+          andMore: "\u0914\u0930 \u092c\u0939\u0941\u0924 \u0915\u0941\u091b",
+          notifyText:
+            "\u0932\u0949\u0928\u094d\u091a \u0939\u094b\u0928\u0947 \u092a\u0930 \u0938\u0942\u091a\u093f\u0924 \u0939\u094b\u0928\u093e \u091a\u093e\u0939\u0924\u0947 \u0939\u0948\u0902? \u0939\u092e\u0947\u0902 \u092b\u093c\u0949\u0932\u094b \u0915\u0930\u0947\u0902",
+          terms: "\u0936\u0930\u094d\u0924\u0947\u0902",
+          privacy: "\u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e",
+          disclaimerTitle: "\u0938\u0942\u091a\u0928\u093e",
+          disclaimerSubtitle:
+            "\u0938\u0940\u092e\u093f\u0924 Google \u0938\u093e\u0907\u0928-\u0907\u0928 \u0938\u092e\u0930\u094d\u0925\u0928 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
+          disclaimerP1:
+            "Munetios \u090f\u0915 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e-\u092a\u094d\u0930\u0925\u092e \u092a\u094d\u0932\u0947\u091f\u092b\u093c\u0949\u0930\u094d\u092e \u0939\u0948\u0964 \u0906\u092a\u0915\u0947 \u0921\u0947\u091f\u093e \u0915\u0940 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0915\u0947 \u0932\u093f\u090f, \u0939\u092e \u091c\u093e\u0928\u092c\u0942\u091d\u0915\u0930 \u0935\u0928-\u091f\u0948\u092a \u0938\u093e\u0907\u0928-\u0907\u0928 \u0914\u0930 \u090f\u0902\u092c\u0947\u0921\u0947\u0921 Google \u0938\u093e\u0907\u0928-\u0907\u0928 \u0935\u093f\u0927\u093f\u092f\u094b\u0902 \u0938\u0947 \u092c\u091a\u0924\u0947 \u0939\u0948\u0902\u0964",
+          disclaimerP2:
+            "Google \u0938\u0947 \u0938\u093e\u0907\u0928 \u0907\u0928 \u0915\u0930\u0928\u0947 \u092a\u0930 \u0906\u092a\u0915\u094b accounts.google.com \u092a\u0930 \u0930\u0940\u0921\u093e\u092f\u0930\u0947\u0915\u094d\u091f \u0915\u093f\u092f\u093e \u091c\u093e\u090f\u0917\u093e\u0964 \u0915\u0943\u092a\u092f\u093e \u0927\u094d\u092f\u093e\u0928 \u0926\u0947\u0902 \u0915\u093f Google \u0905\u092a\u0928\u0940 \u0917\u094b\u092a\u0928\u0940\u092f\u0924\u093e \u0928\u0940\u0924\u093f \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930 \u0907\u0938 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0915\u0947 \u0926\u094c\u0930\u093e\u0928 \u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940 \u0921\u0947\u091f\u093e \u090f\u0915\u0924\u094d\u0930 \u0915\u0930 \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+          close: "\u092c\u0902\u0926 \u0915\u0930\u0947\u0902",
+          leftTitle:
+            "Munetios Accounts \u2014 \u091c\u0932\u094d\u062f \u0906 \u0930\u0939\u093e \u0939\u0948",
+          langLabel: "\u0939\u093f\u0928\u094d\u0926\u0940",
+        },
+        ru: {
+          signIn: "\u0412\u043e\u0439\u0442\u0438",
+          comingSoon: "Munetios Accounts \u2014 \u0421\u043a\u043e\u0440\u043e",
+          comingSoonDesc:
+            "\u041c\u044b \u0443\u0441\u0435\u0440\u0434\u043d\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u043c, \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0432\u0430\u043c \u043d\u043e\u0432\u044b\u0439 \u0438 \u0443\u043b\u0443\u0447\u0448\u0435\u043d\u043d\u044b\u0439 \u043e\u043f\u044b\u0442. \u0421\u043b\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f\u043c\u0438!",
+          upcomingFeatures:
+            "\u041f\u0440\u0435\u0434\u0441\u0442\u043e\u044f\u0449\u0438\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438",
+          googleSignIn:
+            "\u0412\u043e\u0439\u0442\u0438 \u0447\u0435\u0440\u0435\u0437 Google (\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043e)",
+          learnMore:
+            "\u0423\u0437\u043d\u0430\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435",
+          signUp:
+            "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0441 \u043d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u0444\u0430\u043c\u0438\u043b\u0438\u0435\u0439 \u0438 \u043f\u043e\u043b\u043e\u043c",
+          secureAccount:
+            "\u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u043e\u043c",
+          syncDevices:
+            "\u0421\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u044f \u043c\u0435\u0436\u0434\u0443 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430\u043c\u0438",
+          andMore:
+            "\u0418 \u043c\u043d\u043e\u0433\u043e\u0435 \u0434\u0440\u0443\u0433\u043e\u0435",
+          notifyText:
+            "\u0425\u043e\u0442\u0438\u0442\u0435 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u043e \u0437\u0430\u043f\u0443\u0441\u043a\u0435? \u041f\u043e\u0434\u043f\u0438\u0448\u0438\u0442\u0435\u0441\u044c \u043d\u0430 \u043d\u0430\u0441 \u0432",
+          terms: "\u0423\u0441\u043b\u043e\u0432\u0438\u044f",
+          privacy:
+            "\u041a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+          disclaimerTitle:
+            "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435",
+          disclaimerSubtitle:
+            "\u041e\u0431 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043d\u043e\u0439 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0435 \u0432\u0445\u043e\u0434\u0430 \u0447\u0435\u0440\u0435\u0437 Google",
+          disclaimerP1:
+            "Munetios \u2014 \u044d\u0442\u043e \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430, \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043d\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c. \u0414\u043b\u044f \u0437\u0430\u0449\u0438\u0442\u044b \u0432\u0430\u0448\u0438\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u043c\u044b \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u0438\u0437\u0431\u0435\u0433\u0430\u0435\u043c \u0432\u0445\u043e\u0434\u0430 \u043e\u0434\u043d\u0438\u043c \u043d\u0430\u0436\u0430\u0442\u0438\u0435\u043c \u0438 \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u044b\u0445 \u043c\u0435\u0442\u043e\u0434\u043e\u0432 \u0432\u0445\u043e\u0434\u0430 \u0447\u0435\u0440\u0435\u0437 Google.",
+          disclaimerP2:
+            "\u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 \u00ab\u0412\u043e\u0439\u0442\u0438 \u0447\u0435\u0440\u0435\u0437 Google\u00bb \u0432\u044b \u0431\u0443\u0434\u0435\u0442\u0435 \u043f\u0435\u0440\u0435\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u044b \u043d\u0430 accounts.google.com. \u041e\u0431\u0440\u0430\u0442\u0438\u0442\u0435 \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u0435, \u0447\u0442\u043e Google \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0431\u0438\u0440\u0430\u0442\u044c \u0442\u0435\u043b\u0435\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u0441\u043e\u0433\u043b\u0430\u0441\u043d\u043e \u0441\u0432\u043e\u0435\u0439 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0435 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438.",
+          close: "\u0417\u0430\u043a\u0440\u044b\u0442\u044c",
+          leftTitle: "Munetios Accounts \u2014 \u0421\u043a\u043e\u0440\u043e",
+          langLabel: "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+        },
+        nl: {
+          signIn: "Inloggen",
+          comingSoon: "Munetios Accounts \u2014 Binnenkort beschikbaar",
+          comingSoonDesc:
+            "We werken hard om u een nieuwe en verbeterde ervaring te bieden. Blijf op de hoogte!",
+          upcomingFeatures: "Aankomende functies",
+          googleSignIn: "Inloggen met Google (Beperkt)",
+          learnMore: "Meer informatie",
+          signUp: "Registreren met optionele achternaam en geslacht",
+          secureAccount: "Veilig accountbeheer",
+          syncDevices: "Synchronisatie over apparaten",
+          andMore: "En meer",
+          notifyText: "Wil je een melding bij de lancering? Volg ons op",
+          terms: "Voorwaarden",
+          privacy: "Privacy",
+          disclaimerTitle: "Kennisgeving",
+          disclaimerSubtitle:
+            "Over beperkte ondersteuning voor inloggen met Google",
+          disclaimerP1:
+            "Munetios is een privacy-first platform. Om uw gegevens te beschermen vermijden we bewust inloggen met \u00e9\u00e9n tik en ingebedde Google-inlogmethoden.",
+          disclaimerP2:
+            "Wanneer u kiest voor Inloggen met Google, wordt u doorgestuurd naar accounts.google.com. Houd er rekening mee dat Google telemetriegegevens kan verzamelen op grond van zijn eigen privacybeleid.",
+          close: "Sluiten",
+          leftTitle: "Munetios Accounts \u2014 Binnenkort beschikbaar",
+          langLabel: "Nederlands",
+        },
+        pl: {
+          signIn: "Zaloguj si\u0119",
+          comingSoon: "Munetios Accounts \u2014 Wkr\u00f3tce",
+          comingSoonDesc:
+            "Ci\u0119\u017cko pracujemy, aby zapewni\u0107 Ci nowe i ulepszone do\u015bwiadczenie. B\u0105d\u017a na bie\u017c\u0105co!",
+          upcomingFeatures: "Nadchodz\u0105ce funkcje",
+          googleSignIn: "Zaloguj si\u0119 przez Google (ograniczone)",
+          learnMore: "Dowiedz si\u0119 wi\u0119cej",
+          signUp: "Rejestracja z opcjonalnym nazwiskiem i p\u0142ci\u0105",
+          secureAccount: "Bezpieczne zarz\u0105dzanie kontem",
+          syncDevices: "Synchronizacja mi\u0119dzy urz\u0105dzeniami",
+          andMore: "I wi\u0119cej",
+          notifyText:
+            "Chcesz otrzyma\u0107 powiadomienie o uruchomieniu? \u015aled\u017a nas na",
+          terms: "Regulamin",
+          privacy: "Prywatno\u015b\u0107",
+          disclaimerTitle: "Informacja",
+          disclaimerSubtitle:
+            "O ograniczonej obs\u0142udze logowania przez Google",
+          disclaimerP1:
+            "Munetios to platforma stawiaj\u0105ca prywatno\u015b\u0107 na pierwszym miejscu. Aby chroni\u0107 Twoje dane, celowo unikamy logowania jednym klikni\u0119ciem i wbudowanych metod logowania Google.",
+          disclaimerP2:
+            "Po wybraniu opcji Zaloguj si\u0119 przez Google zostaniesz przekierowany na accounts.google.com. Pami\u0119taj, \u017ce Google mo\u017ce zbiera\u0107 dane telemetryczne zgodnie z w\u0142asn\u0105 polityk\u0105 prywatno\u015bci.",
+          close: "Zamknij",
+          leftTitle: "Munetios Accounts \u2014 Wkr\u00f3tce",
+          langLabel: "Polski",
+        },
+        tr: {
+          signIn: "Giri\u015f Yap",
+          comingSoon: "Munetios Accounts \u2014 \u00c7ok Yak\u0131nda",
+          comingSoonDesc:
+            "Size yeni ve geli\u015ftirilmi\u015f bir deneyim sunmak i\u00e7in \u00e7ok \u00e7al\u0131\u015f\u0131yoruz. Takipte kal\u0131n!",
+          upcomingFeatures: "Yak\u0131nda Gelecek \u00d6zellikler",
+          googleSignIn: "Google ile Giri\u015f Yap (S\u0131n\u0131rl\u0131)",
+          learnMore: "Daha Fazla Bilgi",
+          signUp:
+            "\u0130ste\u011fe ba\u011fl\u0131 soyad ve cinsiyet ile kay\u0131t ol",
+          secureAccount: "G\u00fcvenli hesap y\u00f6netimi",
+          syncDevices: "Cihazlar aras\u0131 senkronizasyon",
+          andMore: "Ve daha fazlas\u0131",
+          notifyText:
+            "Lansman haberinden haberdar olmak ister misiniz? Bizi takip edin:",
+          terms: "\u015eartlar",
+          privacy: "Gizlilik",
+          disclaimerTitle: "Bildirim",
+          disclaimerSubtitle:
+            "S\u0131n\u0131rl\u0131 Google Giri\u015fi Deste\u011fi Hakk\u0131nda",
+          disclaimerP1:
+            "Munetios, gizlili\u011fi \u00f6n planda tutan bir platformdur. Verilerinizi korumak amac\u0131yla tek dokunuşla giriş ve g\u00f6m\u00fcl\u00fc Google giri\u015f y\u00f6ntemlerini kas\u0131tl\u0131 olarak kullanm\u0131yoruz.",
+          disclaimerP2:
+            "Google ile Giri\u015f Yap se\u00e7ene\u011fini kulland\u0131\u011f\u0131n\u0131zda accounts.google.com adresine y\u00f6nlendirileceksiniz. Google\u2019\u0131n kendi gizlilik politikas\u0131na g\u00f6re telemetri verisi toplayabilece\u011fini l\u00fctfen unutmay\u0131n.",
+          close: "Kapat",
+          leftTitle: "Munetios Accounts \u2014 \u00c7ok Yak\u0131nda",
+          langLabel: "T\u00fcrk\u00e7e",
+        },
+        id: {
+          signIn: "Masuk",
+          comingSoon: "Munetios Accounts \u2014 Segera Hadir",
+          comingSoonDesc:
+            "Kami bekerja keras untuk menghadirkan pengalaman baru dan lebih baik. Pantau terus!",
+          upcomingFeatures: "Fitur yang Akan Datang",
+          googleSignIn: "Masuk dengan Google (Terbatas)",
+          learnMore: "Pelajari Lebih Lanjut",
+          signUp: "Daftar dengan nama belakang dan jenis kelamin opsional",
+          secureAccount: "Manajemen akun yang aman",
+          syncDevices: "Sinkronisasi antar perangkat",
+          andMore: "Dan lainnya",
+          notifyText:
+            "Ingin mendapat notifikasi saat kami meluncur? Ikuti kami di",
+          terms: "Ketentuan",
+          privacy: "Privasi",
+          disclaimerTitle: "Pemberitahuan",
+          disclaimerSubtitle: "Tentang Dukungan Masuk Google yang Terbatas",
+          disclaimerP1:
+            "Munetios adalah platform yang mengutamakan privasi. Untuk melindungi data Anda, kami sengaja menghindari metode masuk satu ketukan dan masuk Google yang tertanam.",
+          disclaimerP2:
+            "Saat Anda memilih Masuk dengan Google, Anda akan diarahkan ke accounts.google.com. Harap diketahui bahwa Google mungkin mengumpulkan data telemetri sesuai kebijakan privasi mereka sendiri.",
+          close: "Tutup",
+          leftTitle: "Munetios Accounts \u2014 Segera Hadir",
+          langLabel: "Bahasa Indonesia",
+        },
+        vi: {
+          signIn: "\u0110\u0103ng nh\u1eadp",
+          comingSoon: "Munetios Accounts \u2014 S\u1eafp ra m\u1eaft",
+          comingSoonDesc:
+            "Ch\u00fang t\u00f4i \u0111ang n\u1ed7 l\u1ef1c mang \u0111\u1ebfn tr\u1ea3i nghi\u1ec7m m\u1edbi v\u00e0 c\u1ea3i ti\u1ebfn h\u01a1n. H\u00e3y ch\u1edd \u0111\u00f3n!",
+          upcomingFeatures: "T\u00ednh n\u0103ng s\u1eafp c\u00f3",
+          googleSignIn:
+            "\u0110\u0103ng nh\u1eadp b\u1eb1ng Google (H\u1ea1n ch\u1ebf)",
+          learnMore: "T\u00ecm hi\u1ec3u th\u00eam",
+          signUp:
+            "\u0110\u0103ng k\u00fd v\u1edbi h\u1ecd v\u00e0 gi\u1edbi t\u00ednh t\u00f9y ch\u1ecdn",
+          secureAccount: "Qu\u1ea3n l\u00fd t\u00e0i kho\u1ea3n an to\u00e0n",
+          syncDevices:
+            "\u0110\u1ed3ng b\u1ed9 h\u00f3a tr\u00ean c\u00e1c thi\u1ebft b\u1ecb",
+          andMore: "V\u00e0 nhi\u1ec1u h\u01a1n n\u1eefa",
+          notifyText:
+            "Mu\u1ed1n nh\u1eadn th\u00f4ng b\u00e1o khi ra m\u1eaft? Theo d\u00f5i ch\u00fang t\u00f4i t\u1ea1i",
+          terms: "\u0110i\u1ec1u kho\u1ea3n",
+          privacy: "Quy\u1ec1n ri\u00eang t\u01b0",
+          disclaimerTitle: "Th\u00f4ng b\u00e1o",
+          disclaimerSubtitle:
+            "V\u1ec1 h\u1ed7 tr\u1ee3 \u0111\u0103ng nh\u1eadp Google b\u1ecb h\u1ea1n ch\u1ebf",
+          disclaimerP1:
+            "Munetios l\u00e0 n\u1ec1n t\u1ea3ng \u0111\u1eb7t quy\u1ec1n ri\u00eang t\u01b0 l\u00ean h\u00e0ng \u0111\u1ea7u. \u0110\u1ec3 b\u1ea3o v\u1ec7 d\u1eef li\u1ec7u c\u1ee7a b\u1ea1n, ch\u00fang t\u00f4i c\u1ed1 t\u00ecnh tr\u00e1nh s\u1eed d\u1ee5ng \u0111\u0103ng nh\u1eadp m\u1ed9t ch\u1ea1m v\u00e0 c\u00e1c ph\u01b0\u01a1ng th\u1ee9c \u0111\u0103ng nh\u1eadp Google nh\u00fang.",
+          disclaimerP2:
+            "Khi ch\u1ecdn \u0110\u0103ng nh\u1eadp b\u1eb1ng Google, b\u1ea1n s\u1ebd \u0111\u01b0\u1ee3c chuy\u1ec3n h\u01b0\u1edbng \u0111\u1ebfn accounts.google.com. Xin l\u01b0u \u00fd r\u1eb1ng Google c\u00f3 th\u1ec3 thu th\u1eadp d\u1eef li\u1ec7u \u0111o t\u1eeb xa theo ch\u00ednh s\u00e1ch quy\u1ec1n ri\u00eang t\u01b0 c\u1ee7a h\u1ecd.",
+          close: "\u0110\u00f3ng",
+          leftTitle: "Munetios Accounts \u2014 S\u1eafp ra m\u1eaft",
+          langLabel: "Ti\u1ebfng Vi\u1ec7t",
+        },
+      };
+
+      // ── i18n apply ───────────────────────────────────────────────────────────
+      function applyTranslation(lang) {
+        const t = translations[lang] || translations.en;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        document.getElementById("languageLabel").textContent =
+          t.langLabel || lang;
+        // Mark active option
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          opt.classList.toggle("active", opt.dataset.lang === lang);
+        });
+        // RTL support for Arabic
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = lang;
+        localStorage.setItem("language", lang);
+      }
+
+      // ── Light Mode Toggle ────────────────────────────────────────────────────
+      const lightModeToggleBtn = document.getElementById("lightModeToggleBtn");
+      const body = document.body;
+      const savedLightMode = localStorage.getItem("lightMode");
+      const isLightMode =
+        savedLightMode !== null
+          ? savedLightMode === "true"
+          : window.matchMedia("(prefers-color-scheme: light)").matches;
+      if (isLightMode) body.classList.add("light-mode");
+      lightModeToggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        localStorage.setItem(
+          "lightMode",
+          body.classList.contains("light-mode"),
+        );
+      });
+
+      // ── Disclaimer Modal ─────────────────────────────────────────────────────
+      const disclaimerModal = document.getElementById("disclaimerModal");
+      const learnModeBtn = document.getElementById("learnModeBtn");
+      const closeDisclaimerBtn = document.getElementById("closeDisclaimerBtn");
+      learnModeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        disclaimerModal.classList.add("active");
+      });
+      closeDisclaimerBtn.addEventListener("click", () =>
+        disclaimerModal.classList.remove("active"),
+      );
+      disclaimerModal.addEventListener("click", (e) => {
+        if (e.target === disclaimerModal)
+          disclaimerModal.classList.remove("active");
+      });
+
+      // ── Language Dropdown ────────────────────────────────────────────────────
+      const languageBtn = document.getElementById("languageBtn");
+      const languageDropdown = document.getElementById("languageDropdown");
+      const languageWrapper = document.getElementById("languageWrapper");
+
+      languageBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle("open");
+      });
+
+      document.querySelectorAll(".lang-option").forEach((opt) => {
+        opt.addEventListener("click", () => {
+          applyTranslation(opt.dataset.lang);
+          languageDropdown.classList.remove("open");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!languageWrapper.contains(e.target))
+          languageDropdown.classList.remove("open");
+      });
+
+      // ── Init ─────────────────────────────────────────────────────────────────
+      const savedLang = localStorage.getItem("language") || "en";
+      applyTranslation(savedLang);
+    </script>
+  </body>
+</html>
