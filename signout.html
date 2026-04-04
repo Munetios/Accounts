@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signing out of all accounts...</title>
+    <link
+      rel="stylesheet"
+      href="https://api.munetios.com/beautiful-css/beautiful.css"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link
+      rel="icon"
+      href="https://www.munetios.com/favicon-new.ico"
+      type="image/x-icon"
+    />
+    <!-- Material Symbols Rounded -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,80&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Google Sans Flex", sans-serif;
+      }
+      .app-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        background: #0b011a;
+      }
+
+      .logging-out-text {
+        text-align: center;
+        color: white;
+      }
+
+      .logging-out-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid rgb(150, 106, 255);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      p {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 500;
+        background: linear-gradient(
+          90deg,
+          rgb(150, 106, 255),
+          rgb(227, 201, 255)
+        );
+        background-size: 200% 200%;
+        animation: gradientShift 3s ease infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="logging-out-text">
+        <div class="logging-out-spinner"></div>
+        <p>Signing out of all accounts...</p>
+      </div>
+    </div>
+    <script>
+      // Get URL parameter and language preference
+      const params = new URLSearchParams(window.location.search);
+      const redirectUrl = params.get("url");
+      const userLang = navigator.language || navigator.userLanguage;
+
+      // Translation dictionary
+      const translations = {
+        en: "Signing out of all accounts...",
+        es: "Cerrando sesión en todas las cuentas...",
+        fr: "Déconnexion de tous les comptes...",
+        de: "Abmeldung von allen Konten...",
+        it: "Disconnessione da tutti gli account...",
+        pt: "Desconectando de todas as contas...",
+        ja: "すべてのアカウントからサインアウト中...",
+        zh: "正在从所有账户注销...",
+        ru: "Выход из всех учетных записей...",
+        ko: "모든 계정에서 로그아웃 중...",
+        ar: "جاري تسجيل الخروج من جميع الحسابات...",
+        hi: "सभी खातों से साइन आउट किया जा रहा है...",
+        nl: "Afmelden van alle accounts...",
+        pl: "Wylogowywanie ze wszystkich kont...",
+        tr: "Tüm hesaplardan oturum kapatılıyor...",
+        th: "กำลังออกจากบัญชีทั้งหมด...",
+      };
+
+      // Get translated text or default to English
+      const langCode = userLang.split("-")[0];
+      const translatedText = translations[langCode] || translations["en"];
+
+      // Update page text
+      document.querySelector("p").textContent = translatedText;
+
+      // Simulate sign-out delay (adjust timing as needed)
+      setTimeout(() => {
+        if (redirectUrl && redirectUrl.startsWith("https://")) {
+          window.location.href = redirectUrl;
+        } else {
+          window.location.href = `https://www.munetios.com/`;
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>
