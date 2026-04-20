@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Families - Munetios Accounts</title>
+    <link
+      rel="stylesheet"
+      href="https://api.munetios.com/beautiful-css/beautiful.css"
+    />
+    <meta
+      name="description"
+      content="Munetios Accounts - Coming Soon: Stay tuned for updates."
+    />
+    <meta name="keywords" content="Munetios, Accounts, Coming Soon, Updates" />
+    <meta name="author" content="Munetios" />
+    <link
+      rel="icon"
+      href="https://www.munetios.com/favicon-new.ico"
+      type="image/x-icon"
+    />
+    <!-- Material Symbols Rounded -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
+    <!-- Noto Color Emoji -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://api.munetios.com 'nonce-38Dh3hnDSiebf'; style-src 'self' https://api.munetios.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: blob: https://*.munetios.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://api.munetios.com; frame-ancestors 'none';"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,80&display=swap");
+      * {
+        font-family:
+          "Google Sans Flex", "Noto Color Emoji", "Noto Sans", sans-serif;
+        box-sizing: border-box;
+        font-variation-settings:
+          "wght" 400,
+          "ROND" 50;
+      }
+      body {
+        background-color: #141313;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #141313;
+          color: #fff;
+        }
+        .material-symbols-rounded {
+          color: #fff;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #fff;
+          color: #141313;
+        }
+        .material-symbols-rounded {
+          color: #141313 !important;
+        }
+      }
+      .m-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        z-index: 1000;
+      }
+      .m-topleft {
+        height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+      }
+      .m-topright {
+        height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        gap: 16px;
+      }
+      .mg-logo-text {
+        font-size: 20px;
+        font-feature-settings: "ss01" 1;
+        font-weight: 500;
+      }
+
+      .m-topitem,
+      .m-topbaritem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background 0.2s;
+      }
+
+      .m-topitem:hover,
+      .m-topbaritem:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .material-symbols-rounded {
+        font-size: 28px;
+        color: #fff;
+      }
+      .m-families-content {
+        max-width: 600px;
+        margin: 120px auto 40px auto;
+        background: rgba(30, 30, 30, 0.3);
+        border-radius: 18px;
+        box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.18);
+        padding: 40px 32px 32px 32px;
+        text-align: center;
+        backdrop-filter: blur(2px);
+      }
+      .m-families-content h1 {
+        font-size: 2.1rem;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+      .m-families-content ul {
+        text-align: left;
+        margin: 18px auto 0 auto;
+        max-width: 400px;
+        padding-left: 24px;
+      }
+      .m-families-content li {
+        margin-bottom: 8px;
+        font-size: 1.08rem;
+      }
+      .m-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 0 24px 12px 24px;
+        z-index: 1001;
+        background: linear-gradient(
+          0deg,
+          rgba(20, 19, 19, 0.95) 80%,
+          rgba(20, 19, 19, 0) 100%
+        );
+        min-height: 48px;
+      }
+      .m-f-l {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .m-f-r {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .m-footer-link {
+        color: #a7a7a7;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      .m-footer-link:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .m-lang-button {
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 18px;
+        padding: 6px 18px 6px 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 1rem;
+        transition: background 0.2s;
+        user-select: none;
+      }
+      .m-lang-button:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .m-dropdown {
+        display: none;
+        position: fixed;
+        left: 24px;
+        bottom: 60px;
+        min-width: 180px;
+        max-height: 320px;
+        overflow-y: auto;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.18);
+        z-index: 2000;
+        padding: 8px 0;
+        font-size: 1rem;
+        animation: fadeIn 0.18s;
+      }
+      .m-dropdown.show {
+        display: block;
+      }
+      /* Help modal styles */
+      .m-modal-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 3000;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .m-modal-backdrop.show {
+        display: flex;
+      }
+      .m-modal {
+        max-width: 720px;
+        width: 100%;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+        color: #fff;
+      }
+      .m-modal h2 {
+        margin: 0 0 8px 0;
+        font-size: 1.25rem;
+      }
+      .m-modal .m-modal-body {
+        margin-top: 8px;
+        color: #dcdcdc;
+        line-height: 1.5;
+      }
+      .m-modal .m-modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .m-btn {
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .m-btn.primary {
+        background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      }
+      .m-option {
+        padding: 8px 18px;
+        cursor: pointer;
+        transition: background 0.18s;
+      }
+      .m-option:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 700px) {
+        .m-families-content {
+          max-width: 98vw;
+          padding: 18px 4vw 18px 4vw;
+        }
+        .m-footer {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 8px;
+          padding: 0 8px 8px 8px;
+        }
+        .m-f-l,
+        .m-f-r {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="m-families-c">
+      <div class="m-topbar">
+        <div class="m-topleft liquid-glass">
+          <div class="m-logo">
+            <div class="mg-logo-text">Munetios Families</div>
+          </div>
+        </div>
+        <div class="m-topright liquid-glass">
+          <div class="m-topitem" id="helpBtn">
+            <span class="material-symbols-rounded">help</span>
+          </div>
+        </div>
+      </div>
+      <div class="m-families-content">
+        <h1>
+          Munetios Families is Coming Soon because Munetios Accounts is also
+          Coming Soon
+        </h1>
+        <p>
+          Stay tuned for updates and more information about Munetios Families.
+        </p>
+        <p>Features that will have:</p>
+        <ul>
+          <li>Screen Time and Parental Controls</li>
+          <li>Activity Reports and Insights (No Tracking)</li>
+          <li>Family Member Management</li>
+          <li>Share purchases with family members</li>
+          <li>and more exciting features!</li>
+        </ul>
+      </div>
+      <div class="m-footer">
+        <div class="m-f-l">
+          <div class="m-lang-button" id="changeLanguageBtn">
+            <span id="selectedLang">English</span>
+            <span class="material-symbols-rounded">arrow_drop_down</span>
+          </div>
+        </div>
+        <div class="m-f-r">
+          <a
+            id="termsLink"
+            href="https://www.munetios.com/policies/#terms"
+            class="m-footer-link"
+            >Terms</a
+          >
+          <a
+            id="privacyLink"
+            href="https://www.munetios.com/policies/#privacy"
+            class="m-footer-link"
+            >Privacy</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="m-dropdown liquid-glass" id="languagePicker">
+      <div class="m-option" data-lang="en">🇺🇸 English</div>
+      <div class="m-option" data-lang="es">🇪🇸 Español</div>
+      <div class="m-option" data-lang="fr">🇫🇷 Français</div>
+      <div class="m-option" data-lang="de">🇩🇪 Deutsch</div>
+      <div class="m-option" data-lang="it">🇮🇹 Italiano</div>
+      <div class="m-option" data-lang="pt">🇧🇷 Português</div>
+      <div class="m-option" data-lang="ja">🇯🇵 日本語</div>
+      <div class="m-option" data-lang="ko">🇰🇷 한국어</div>
+      <div class="m-option" data-lang="zh">🇨🇳 中文 (简体)</div>
+      <div class="m-option" data-lang="zh-tw">🇹🇼 繁體中文</div>
+      <div class="m-option" data-lang="ar">🇸🇦 العربية</div>
+      <div class="m-option" data-lang="hi">🇮🇳 हिन्दी</div>
+      <div class="m-option" data-lang="ru">🇷🇺 Русский</div>
+      <div class="m-option" data-lang="nl">🇳🇱 Nederlands</div>
+      <div class="m-option" data-lang="pl">🇵🇱 Polski</div>
+      <div class="m-option" data-lang="tr">🇹🇷 Türkçe</div>
+      <div class="m-option" data-lang="id">🇮🇩 Bahasa Indonesia</div>
+      <div class="m-option" data-lang="vi">🇻🇳 Tiếng Việt</div>
+    </div>
+    <!-- Help modal (no external dead links; show in-text guidance) -->
+    <div class="m-modal-backdrop" id="helpModal" aria-hidden="true">
+      <div
+        class="m-modal liquid-glass"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="helpTitle"
+      >
+        <h2 id="helpTitle">Help</h2>
+        <div class="m-modal-body" id="helpBody">
+          Need help? Check the settings or this page for guidance.
+        </div>
+        <div class="m-modal-actions">
+          <button class="m-btn" id="helpClose">Close</button>
+        </div>
+      </div>
+    </div>
+    <script nonce="38Dh3hnDSiebf">
+      // UI translations
+      const translations = {
+        en: {
+          title:
+            "Munetios Families is Coming Soon because Munetios Accounts is also Coming Soon",
+          desc: "Stay tuned for updates and more information about Munetios Families.",
+          features: "Features that will have:",
+          featureList: [
+            "Screen Time and Parental Controls",
+            "Activity Reports and Insights (No Tracking)",
+            "Family Member Management",
+            "Share purchases with family members",
+            "and more exciting features!",
+          ],
+          terms: "Terms",
+          privacy: "Privacy",
+        },
+        es: {
+          title:
+            "Munetios Families llegará pronto porque Munetios Accounts también llegará pronto",
+          desc: "Mantente atento para actualizaciones y más información sobre Munetios Families.",
+          features: "Características que tendrá:",
+          featureList: [
+            "Tiempo en pantalla y controles parentales",
+            "Informes de actividad y perspectivas (sin seguimiento)",
+            "Gestión de miembros de la familia",
+            "Comparte compras con miembros de la familia",
+            "¡y más funciones emocionantes!",
+          ],
+          terms: "Términos",
+          privacy: "Privacidad",
+        },
+        nl: {
+          title:
+            "Munetios Families komt binnenkort omdat Munetios Accounts ook binnenkort komt",
+          desc: "Blijf op de hoogte voor updates en meer informatie over Munetios Families.",
+          features: "Functies die het zal hebben:",
+          featureList: [
+            "Schermtijd en ouderlijk toezicht",
+            "Activiteitsrapporten en inzichten (geen tracking)",
+            "Gezinsledenbeheer",
+            "Deel aankopen met gezinsleden",
+            "en meer spannende functies!",
+          ],
+          terms: "Voorwaarden",
+          privacy: "Privacy",
+        },
+        sv: {
+          title:
+            "Munetios Families kommer snart eftersom Munetios Accounts också kommer snart",
+          desc: "Håll utkik efter uppdateringar och mer information om Munetios Families.",
+          features: "Funktioner som kommer att finnas:",
+          featureList: [
+            "Skärmtid och föräldrakontroller",
+            "Aktivitetsrapporter och insikter (ingen spårning)",
+            "Familjemedlemshantering",
+            "Dela köp med familjemedlemmar",
+            "och fler spännande funktioner!",
+          ],
+          terms: "Villkor",
+          privacy: "Integritet",
+        },
+        fi: {
+          title:
+            "Munetios Families tulossa pian, koska myös Munetios Accounts on tulossa pian",
+          desc: "Pysy kuulolla päivityksistä ja lisätiedoista Munetios Familiesista.",
+          features: "Ominaisuudet, joita tulee:",
+          featureList: [
+            "Ruudunajan ja vanhempien valvonta",
+            "Aktiivisuusraportit ja oivallukset (ei seurantaa)",
+            "Perheenjäsenten hallinta",
+            "Jaa ostokset perheenjäsenille",
+            "ja lisää jännittäviä ominaisuuksia!",
+          ],
+          terms: "Ehdot",
+          privacy: "Tietosuoja",
+        },
+        da: {
+          title:
+            "Munetios Families kommer snart, fordi Munetios Accounts også snart kommer",
+          desc: "Hold øje med opdateringer og mere information om Munetios Families.",
+          features: "Funktioner der kommer:",
+          featureList: [
+            "Skærmtid og forældrekontrol",
+            "Aktivitetsrapporter og indsigter (ingen sporing)",
+            "Familieadministration",
+            "Del køb med familiemedlemmer",
+            "og flere spændende funktioner!",
+          ],
+          terms: "Vilkår",
+          privacy: "Privatliv",
+        },
+        ro: {
+          title:
+            "Munetios Families va apărea în curând pentru că și Munetios Accounts va apărea în curând",
+          desc: "Rămâneți la curent pentru actualizări și mai multe informații despre Munetios Families.",
+          features: "Funcții care vor exista:",
+          featureList: [
+            "Timp de ecran și control parental",
+            "Rapoarte de activitate și perspective (fără urmărire)",
+            "Gestionarea membrilor familiei",
+            "Partajați achizițiile cu membrii familiei",
+            "și mai multe funcții interesante!",
+          ],
+          terms: "Termeni",
+          privacy: "Confidențialitate",
+        },
+        fr: {
+          title:
+            "Munetios Families arrive bientôt car Munetios Accounts arrive aussi bientôt",
+          desc: "Restez à l'écoute pour les mises à jour et plus d'informations sur Munetios Families.",
+          features: "Fonctionnalités à venir :",
+          featureList: [
+            "Temps d'écran et contrôle parental",
+            "Rapports d'activité et insights (pas de suivi)",
+            "Gestion des membres de la famille",
+            "Partagez des achats avec les membres de la famille",
+            "et plus de fonctionnalités passionnantes !",
+          ],
+          terms: "Conditions",
+          privacy: "Confidentialité",
+        },
+        de: {
+          title:
+            "Munetios Families kommt bald, weil Munetios Accounts auch bald kommt",
+          desc: "Bleiben Sie dran für Updates und weitere Informationen zu Munetios Families.",
+          features: "Funktionen, die es haben wird:",
+          featureList: [
+            "Bildschirmzeit und Kindersicherung",
+            "Aktivitätsberichte und Einblicke (kein Tracking)",
+            "Familienmitgliedverwaltung",
+            "Käufe mit Familienmitgliedern teilen",
+            "und weitere spannende Funktionen!",
+          ],
+          terms: "Nutzungsbedingungen",
+          privacy: "Datenschutz",
+        },
+        it: {
+          title:
+            "Munetios Families sta arrivando perché anche Munetios Accounts sta arrivando",
+          desc: "Rimani sintonizzato per aggiornamenti e maggiori informazioni su Munetios Families.",
+          features: "Funzionalità che avrà:",
+          featureList: [
+            "Tempo di utilizzo e controllo genitori",
+            "Report attività e approfondimenti (nessun tracciamento)",
+            "Gestione dei membri della famiglia",
+            "Condividi acquisti con i membri della famiglia",
+            "e altre funzionalità entusiasmanti!",
+          ],
+          terms: "Termini",
+          privacy: "Privacy",
+        },
+        pt: {
+          title:
+            "Munetios Families em breve porque Munetios Accounts também está chegando",
+          desc: "Fique atento para atualizações e mais informações sobre Munetios Families.",
+          features: "Recursos que terá:",
+          featureList: [
+            "Tempo de tela e controles parentais",
+            "Relatórios de atividades e insights (sem rastreamento)",
+            "Gerenciamento de membros da família",
+            "Compartilhe compras com membros da família",
+            "e mais recursos empolgantes!",
+          ],
+          terms: "Termos",
+          privacy: "Privacidade",
+        },
+        ru: {
+          title:
+            "Munetios Families скоро появится, потому что Munetios Accounts тоже скоро появится",
+          desc: "Следите за обновлениями и дополнительной информацией о Munetios Families.",
+          features: "Функции, которые будут:",
+          featureList: [
+            "Экранное время и родительский контроль",
+            "Отчеты об активности и аналитика (без отслеживания)",
+            "Управление членами семьи",
+            "Делитесь покупками с членами семьи",
+            "и другие интересные функции!",
+          ],
+          terms: "Условия",
+          privacy: "Конфиденциальность",
+        },
+        zh: {
+          title:
+            "Munetios Families 即将推出，因为 Munetios Accounts 也即将推出",
+          desc: "敬请关注 Munetios Families 的更新和更多信息。",
+          features: "将具备的功能：",
+          featureList: [
+            "屏幕时间和家长控制",
+            "活动报告和见解（无跟踪）",
+            "家庭成员管理",
+            "与家庭成员共享购买",
+            "以及更多令人兴奋的功能！",
+          ],
+          terms: "条款",
+          privacy: "隐私",
+        },
+        ja: {
+          title:
+            "Munetios Familiesは近日公開予定です。Munetios Accountsも近日公開予定です",
+          desc: "Munetios Familiesの最新情報をお待ちください。",
+          features: "今後の機能：",
+          featureList: [
+            "スクリーンタイムとペアレンタルコントロール",
+            "アクティビティレポートとインサイト（追跡なし）",
+            "家族メンバー管理",
+            "家族と購入を共有",
+            "その他のエキサイティングな機能！",
+          ],
+          terms: "利用規約",
+          privacy: "プライバシー",
+        },
+        ko: {
+          title:
+            "Munetios Families가 곧 출시됩니다. Munetios Accounts도 곧 출시됩니다",
+          desc: "Munetios Families의 업데이트와 더 많은 정보를 기대해 주세요.",
+          features: "예정된 기능:",
+          featureList: [
+            "스크린 타임 및 부모 통제",
+            "활동 보고서 및 인사이트 (추적 없음)",
+            "가족 구성원 관리",
+            "가족 구성원과 구매 공유",
+            "그리고 더 많은 흥미로운 기능들!",
+          ],
+          terms: "약관",
+          privacy: "개인정보",
+        },
+        ar: {
+          title:
+            "قريبًا ستتوفر Munetios Families لأن Munetios Accounts ستتوفر أيضًا قريبًا",
+          desc: "تابع التحديثات والمزيد من المعلومات حول Munetios Families.",
+          features: "الميزات التي ستكون:",
+          featureList: [
+            "وقت الشاشة والرقابة الأبوية",
+            "تقارير النشاط والرؤى (بدون تتبع)",
+            "إدارة أفراد العائلة",
+            "مشاركة المشتريات مع أفراد العائلة",
+            "والمزيد من الميزات المثيرة!",
+          ],
+          terms: "الشروط",
+          privacy: "الخصوصية",
+        },
+        hi: {
+          title:
+            "Munetios Families जल्द आ रहा है क्योंकि Munetios Accounts भी जल्द आ रहा है",
+          desc: "Munetios Families के अपडेट और अधिक जानकारी के लिए जुड़े रहें।",
+          features: "विशेषताएँ जो होंगी:",
+          featureList: [
+            "स्क्रीन टाइम और पेरेंटल कंट्रोल",
+            "गतिविधि रिपोर्ट और इनसाइट्स (कोई ट्रैकिंग नहीं)",
+            "परिवार के सदस्य प्रबंधन",
+            "परिवार के सदस्यों के साथ खरीदारी साझा करें",
+            "और भी रोमांचक विशेषताएँ!",
+          ],
+          terms: "नियम",
+          privacy: "गोपनीयता",
+        },
+        help: {
+          en: {
+            title: "Help",
+            body: "How can we help?\n- Change language: open the language picker (bottom-left) and select your preferred language — your choice is saved to this device.\n- Terms & Privacy: use the footer links to read policy text for the selected language (when available).\n- Translation notes: translations are provided for the coming-soon page and may be approximate.\n- Reset language: clear site data/localStorage to remove your saved preference.\nFor additional assistance, use Munetios official support channels.",
+          },
+          es: {
+            title: "Ayuda",
+            body: "¿Necesitas ayuda? Usa el selector de idioma, revisa la configuración o actualiza la página.",
+          },
+          fr: {
+            title: "Aide",
+            body: "Besoin d'aide ? Utilisez le sélecteur de langue, vérifiez les paramètres ou actualisez la page.",
+          },
+          de: {
+            title: "Hilfe",
+            body: "Brauchen Sie Hilfe? Verwenden Sie den Sprachwähler, prüfen Sie die Einstellungen oder laden Sie die Seite neu.",
+          },
+          it: {
+            title: "Aiuto",
+            body: "Hai bisogno di aiuto? Usa il selettore di lingua, controlla le impostazioni o aggiorna la pagina.",
+          },
+          pt: {
+            title: "Ajuda",
+            body: "Precisa de ajuda? Use o seletor de idioma, verifique as configurações ou atualize a página.",
+          },
+          ja: {
+            title: "ヘルプ",
+            body: "ヘルプが必要ですか？言語ピッカーを使用するか、設定を確認するか、ページを更新してください。",
+          },
+          ko: {
+            title: "도움말",
+            body: "도움이 필요하신가요? 언어 선택기를 사용하거나 설정을 확인하거나 페이지를 새로고침하세요.",
+          },
+          zh: {
+            title: "帮助",
+            body: "需要帮助吗？使用语言选择器，检查设置，或刷新此页面。",
+          },
+          "zh-tw": {
+            title: "說明",
+            body: "需要協助嗎？使用語言選擇器、檢查設定或重新整理頁面。",
+          },
+          ar: {
+            title: "مساعدة",
+            body: "هل تحتاج إلى مساعدة؟ استخدم محدد اللغة، تحقق من الإعدادات، أو قم بتحديث الصفحة.",
+          },
+          hi: {
+            title: "सहायता",
+            body: "क्या आपको मदद चाहिए? भाषा चयनकर्ता का उपयोग करें, सेटिंग्स जांचें, या पृष्ठ रीफ़्रेश करें।",
+          },
+          ru: {
+            title: "Помощь",
+            body: "Нужна помощь? Используйте выбор языка, проверьте настройки или обновите страницу.",
+          },
+          nl: {
+            title: "Help",
+            body: "Hulp nodig? Gebruik de taalkiezer, controleer instellingen of ververs de pagina.",
+          },
+          pl: {
+            title: "Pomoc",
+            body: "Potrzebujesz pomocy? Użyj selektora języka, sprawdź ustawienia lub odśwież stronę.",
+          },
+          tr: {
+            title: "Yardım",
+            body: "Yardıma mı ihtiyacınız var? Dil seçiciyi kullanın, ayarları kontrol edin veya sayfayı yenileyin.",
+          },
+          id: {
+            title: "Bantuan",
+            body: "Butuh bantuan? Gunakan pemilih bahasa, periksa pengaturan, atau muat ulang halaman.",
+          },
+          vi: {
+            title: "Trợ giúp",
+            body: "Cần trợ giúp? Sử dụng bộ chọn ngôn ngữ, kiểm tra cài đặt hoặc làm mới trang.",
+          },
+          sv: {
+            title: "Hjälp",
+            body: "Behöver du hjälp? Använd språkvalet, kontrollera inställningarna eller uppdatera sidan.",
+          },
+          fi: {
+            title: "Ohje",
+            body: "Tarvitsetko apua? Käytä kielivalitsinta, tarkista asetukset tai päivitä sivu.",
+          },
+          da: {
+            title: "Hjælp",
+            body: "Brug for hjælp? Brug sprogvælgeren, tjek indstillinger eller opdater siden.",
+          },
+          ro: {
+            title: "Ajutor",
+            body: "Ai nevoie de ajutor? Folosește selectorul de limbă, verifică setările sau reîmprospătează pagina.",
+          },
+        },
+      };
+
+      // Language Picker Functionality with localStorage and UI translation
+      const langBtn = document.getElementById("changeLanguageBtn");
+      const langPicker = document.getElementById("languagePicker");
+      const selectedLang = document.getElementById("selectedLang");
+      let langOpen = false;
+
+      // UI element references
+      const h1 = document.querySelector(".m-families-content h1");
+      const descP = document.querySelector(".m-families-content p");
+      const featuresP = document.querySelectorAll(".m-families-content p")[1];
+      const ul = document.querySelector(".m-families-content ul");
+      const termsLink = document.getElementById("termsLink");
+      const privacyLink = document.getElementById("privacyLink");
+
+      // Get browser preferred language
+      function getPreferredLang() {
+        const navLangs = navigator.languages || [
+          navigator.language || navigator.userLanguage,
+        ];
+        for (const l of navLangs) {
+          const code = l.split("-")[0];
+          if (translations[code]) return code;
+        }
+        return "en";
+      }
+
+      // Set language and update UI
+      function setLanguage(lang) {
+        if (!translations[lang]) lang = "en";
+        localStorage.setItem("munetiosLang", lang);
+        const t = translations[lang];
+        selectedLang.textContent =
+          langPicker.querySelector(`.m-option[data-lang='${lang}']`)
+            ?.textContent ||
+          t.english ||
+          "English";
+        h1.textContent = t.title;
+        descP.textContent = t.desc;
+        featuresP.textContent = t.features;
+        ul.innerHTML = t.featureList.map((f) => `<li>${f}</li>`).join("");
+        if (termsLink) {
+          termsLink.textContent = t.terms;
+          termsLink.href = `https://www.munetios.com/policies/#terms`;
+        }
+        if (privacyLink) {
+          privacyLink.textContent = t.privacy;
+          privacyLink.href = `https://www.munetios.com/policies/#privacy`;
+        }
+        // Help modal translations update (if present)
+        try {
+          const helpMap = translations.help || {};
+          const helpItem = helpMap[lang] || helpMap["en"];
+          const helpTitleEl = document.getElementById("helpTitle");
+          const helpBodyEl = document.getElementById("helpBody");
+          if (helpItem && helpTitleEl && helpBodyEl) {
+            helpTitleEl.textContent = helpItem.title;
+            helpBodyEl.textContent = helpItem.body;
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      // Load language from storage or browser
+      function loadLanguage() {
+        let lang = localStorage.getItem("munetiosLang");
+        if (!lang) {
+          lang = getPreferredLang();
+          localStorage.setItem("munetiosLang", lang);
+        }
+        setLanguage(lang);
+        return lang;
+      }
+
+      // Picker open/close
+      langBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langPicker.classList.toggle("show");
+        langOpen = !langOpen;
+      });
+      document.addEventListener("click", (e) => {
+        if (
+          langOpen &&
+          !langPicker.contains(e.target) &&
+          !langBtn.contains(e.target)
+        ) {
+          langPicker.classList.remove("show");
+          langOpen = false;
+        }
+      });
+
+      // Picker option click
+      Array.from(langPicker.getElementsByClassName("m-option")).forEach(
+        (opt) => {
+          opt.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            setLanguage(lang);
+            langPicker.classList.remove("show");
+            langOpen = false;
+          });
+        },
+      );
+
+      // Help modal handlers
+      const helpBtnEl = document.getElementById("helpBtn");
+      const helpModal = document.getElementById("helpModal");
+      const helpClose = document.getElementById("helpClose");
+      function openHelp() {
+        if (!helpModal) return;
+        helpModal.classList.add("show");
+        helpModal.setAttribute("aria-hidden", "false");
+        helpClose?.focus();
+      }
+      function closeHelp() {
+        if (!helpModal) return;
+        helpModal.classList.remove("show");
+        helpModal.setAttribute("aria-hidden", "true");
+        helpBtnEl?.focus();
+      }
+      helpBtnEl?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openHelp();
+      });
+      helpClose?.addEventListener("click", closeHelp);
+      helpModal?.addEventListener("click", (e) => {
+        if (e.target === helpModal) closeHelp();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeHelp();
+      });
+
+      // On load, set language
+      loadLanguage();
+    </script>
+  </body>
+</html>
